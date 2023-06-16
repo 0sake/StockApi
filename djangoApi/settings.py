@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'vercel_app.wsgi.app' 
+WSGI_APPLICATION =  'djangoApi.wsgi.application'
 #'djangoApi.wsgi.application'
 
 # Database
