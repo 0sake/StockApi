@@ -1,0 +1,105 @@
+POST http://127.0.0.1:8000/signup/
+Content-Type: application/json
+
+{
+    "username": "itato4",
+    "password": "pollopollo",
+    "email": "pollo@gmail.com"
+}
+
+
+###
+
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username": "itato4",
+    "password": "pollopollo"
+}
+
+###
+GET http://127.0.0.1:8000/test_token/
+Content-Type: application/json
+#finche passo il token con authorization va bene e django verifica in automatico la validità del token
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{}
+###
+GET http://127.0.0.1:8000/stock/AAPL
+Content-Type: application/json
+
+{
+    "symbol": "AAPL"
+}
+###
+GET http://127.0.0.1:8000/portfolio/
+Content-Type: application/json
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{}
+###
+POST http://127.0.0.1:8000/createPortfolio/
+Content-Type: application/json
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{
+    "name": "portfolio1",
+    "type": "maxRisk"
+}
+###
+
+GET http://127.0.0.1:8000/portfolio/
+Content-Type: application/json
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{
+    "name": "portfolio1"    
+}
+###
+GET http://127.0.0.1:8000/portfolioDetails/
+Content-Type: application/json
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{
+    "name": "portfolio1"    
+}
+###
+
+GET http://127.0.0.1:8000/allportfolios/
+Content-Type: application/json
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{
+        
+}
+###
+
+POST http://127.0.0.1:8000/addTicker/
+Content-Type: application/json
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{
+    "name": "portfolio1",
+    "symbol": "AAPL",
+    "shares": 10,
+    "price": 100
+}
+###
+
+POST http://127.0.0.1:8000/removeTicker/
+Content-Type: application/json
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{
+    "name": "portfolio1",
+    "symbol": "AAPL",
+    "shares": 10,
+    "price": 100.0
+}
+###
+GET http://127.0.0.1:8000/ticker/AAPL
+Content-Type: application/json
+Authorization: Token f7bb305ba118dca60da1ebe61b402b5903562adc
+
+{}
