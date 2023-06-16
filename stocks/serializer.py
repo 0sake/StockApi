@@ -33,7 +33,6 @@ class PortfolioSerializer(serializers.ModelSerializer):
         self.user = UserSerializer(self.context.get('user'))
         self.portfolio = PortfolioSerializer(self.instance)
         self.tickers_set = models.Ticker.objects.filter(portfolio=self.instance)
-        print(self.tickers_set)
         response_data = {
             
             'portfolio': self.portfolio.data,
@@ -82,7 +81,6 @@ class SimpleStockSerializer(serializers.ModelSerializer):
         
 class SimpleTickerSerializer(serializers.ModelSerializer):
     stockSymbol = serializers.CharField(source='stock.symbol')
-    print(stockSymbol)
     class Meta(object):
         model = models.Ticker
         fields = ('stockSymbol', 'shares', 'price')

@@ -34,7 +34,6 @@ def yahooTestView(request):
 def stockPageView(request):
     finnhub_client = finnhub.Client(api_key=apiKeyClear)
     stockSymbolLookup = finnhub_client.symbol_lookup('AAPL')
-    print(stockSymbolLookup)
     return HttpResponse('<h1>Stock Page</h1><p>Symbol Lookup</p><p>'+str(stockSymbolLookup)+'</p>')
 
 @api_view(['GET'])
